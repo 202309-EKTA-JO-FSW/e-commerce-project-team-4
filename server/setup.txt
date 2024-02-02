@@ -1,0 +1,41 @@
+├── versions/
+│   ├── v1/
+│   │   ├── controllers/
+│   │   │   ├── adminController.js
+│   │   │   ├── customerController.js
+│   │   ├── models/
+│   │   │   ├── shopItemModel.js
+│   │   │   ├── customerModel.js
+│   │   │   ├── cartModel.js
+│   │   │   ├── orderModel.js
+│   │   ├── routes/
+│   │   │   ├── adminRoutes.js
+│   │   │   ├── customerRoutes.js
+│   │   ├── tests/
+│   │   │   ├── adminTests.js
+│   │   │   ├── customerTests.js
+│   │   ├── db/
+│   │   │   ├── connection.js
+│   │   ├── utils/
+│   │   │   ├── validation.js
+│   │   │   ├── errorHandlers.js
+│   ├── v2/
+│   │   ├── controllers/
+│   │   │   ├── adminController.js
+│   │   │   ├── customerController.js
+│   │   ├── models/
+│   │   │   ├── shopItemModel.js
+│   │   │   ├── customerModel.js
+│   │   │   ├── cartModel.js
+│   │   │   ├── orderModel.js
+│   │   ├── routes/
+│   │   │   ├── adminRoutes.js
+│   │   │   ├── customerRoutes.js
+│   │   ├── tests/
+│   │   │   ├── adminTests.js
+│   │   │   ├── customerTests.js
+│   │   ├── db/
+│   │   │   ├── connection.js
+│   │   ├── utils/
+│   │   │   ├── validation.js
+│   │   │   ├── errorHandlers.js

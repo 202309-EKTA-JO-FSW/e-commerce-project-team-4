@@ -1,5 +1,6 @@
 const express = require("express");
 require("dotenv").config();
+const adminRouter = require("./versions/v1/routes");
 
 const connectToMongo = require("./db/connection");
 
@@ -11,6 +12,8 @@ const port =
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+
+app.use("/v1/api/", adminRouter);
 
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`);
