@@ -1,6 +1,6 @@
 const express = require("express");
 require("dotenv").config();
-const adminRouter = require("./versions/v1/routes");
+const adminRouter = require("./versions/v1/routes/admin");
 
 const connectToMongo = require("./db/connection");
 
