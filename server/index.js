@@ -1,6 +1,6 @@
 const express = require("express");
 require("dotenv").config();
-const adminRouter = require("./versions/v1/routes/admin");
+const adminRouter = require("./versions/v1/routes");
 
 const connectToMongo = require("./db/connection");
 
@@ -10,10 +10,16 @@ const port =
     ? process.env.NODE_LOCAL_TEST_PORT
     : process.env.NODE_LOCAL_PORT;
 
+const errorHandlers = require('./versions/v1/utils/errorHandlers')
+
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 app.use("/v1/api/", adminRouter);
+
+app.use(errorHandlers.handleValidationErrors);
+app.use(errorHandlers.handleDuplicateKeyError);
+app.use(errorHandlers.handleGeneralError);
 
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`);
