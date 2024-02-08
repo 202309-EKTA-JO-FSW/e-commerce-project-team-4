@@ -3,16 +3,17 @@ const mongoose = require("mongoose");
 const cardSchema = new mongoose.Schema(
   {
     customerId: {
-      type: String,
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Customer",
       required: true,
     },
     itemId: {
-      type: String,
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "ShopItem",
       required: true,
     },
     quantity: {
       type: Number,
-      required: true,
     },
   },
   {

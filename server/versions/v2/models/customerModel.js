@@ -1,5 +1,15 @@
 const mongoose = require("mongoose");
 
+const cartItemSchema = new mongoose.Schema({
+  itemId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "ShopItem",
+    required: true,
+  },
+  quantity: { type: Number, required: true },
+  price: { type: Number, required: true },
+});
+
 const customerSchema = new mongoose.Schema(
   {
     name: {
@@ -7,7 +17,12 @@ const customerSchema = new mongoose.Schema(
       required: true,
       default: "customer",
     },
-    card: [{ type: mongoose.Schema.Types.ObjectId, ref: "Card" }],
+    gender: {
+      type: String,
+      require: true,
+      enum: ["male", "female"],
+    },
+    card: cartItemSchema,
   },
   {
     timestamps: true,

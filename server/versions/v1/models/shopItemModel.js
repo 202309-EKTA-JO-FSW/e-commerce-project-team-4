@@ -5,10 +5,6 @@ const ShopItem = new mongoose.Schema({
     type: String,
     required: true,
   },
-  image:{
-    type:String,
-    required:true
-  },
   price: {
     type: Number,
     required: true,
@@ -19,16 +15,14 @@ const ShopItem = new mongoose.Schema({
   },
   availableCount: {
     type: Number,
+    require: true,
     default: 1,
+    min: 0,
   },
   category: {
     type: [String],
     default: [],
   },
-  genre:{
-    type:String,
-    required:true
-  }
 });
 
-module.exports = mongoose.model("shopitem", ShopItem);
+module.exports = mongoose.model("ShopItem", ShopItem);
